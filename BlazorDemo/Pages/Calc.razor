@@ -6,11 +6,8 @@
 
 <div class="card mt-5" style="width: 25rem;">
     <div class="card-body">
-        <EditForm Model="@CalcExpression" OnValidSubmit="SetAnswer">
-
-            <DataAnnotationsValidator/>
+        <EditForm Model="@CalcExpression">
             <ValidationSummary/>
-
             <div class="form-group">
                 <label for="first">Number № 1:</label>
                 <InputNumber id="first"
