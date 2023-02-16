@@ -1,0 +1,42 @@
+name: Build and Test
+  
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - '**.cs'
+      - '**.csproj'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout to the repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "7.x"
+          
+      - name: Setup Nuget Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+            
+      - name: Install dependencies
+        run: nuget restore BlazorDemo.sln
+
+      - name: Install dependencies
+        run: dotnet restore BlazorDemo.sln
+          
+      - name: Build
+        run: dotnet build BlazorDemo.sln --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
