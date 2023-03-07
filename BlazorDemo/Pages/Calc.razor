@@ -1,4 +1,5 @@
 ﻿@page "/calc"
+@using DataCore.Enums
 @inherits LayoutComponentBase
 
 <PageTitle>Calc</PageTitle>
@@ -10,22 +11,20 @@
             <ValidationSummary/>
             <div class="form-group">
                 <label for="first">Number № 1:</label>
-                <InputNumber id="first"
-                             @bind-Value="@CalcExpression.FirstValue" class="form-control"/>
+                <InputNumber id="first" @bind-Value="@CalcExpression.FirstNum" class="form-control"/>
             </div>
             <div class="form-group">
-                <label>Sign:</label>
+                <label for="sign">Sign:</label>
                 <InputSelect id="sign" @bind-Value="@CalcExpression.Sign" class="form-control">
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="/">/</option>
-                    <option value="*">*</option>
+                    <option value="@SignEnum.Addition">+</option>
+                    <option value="@SignEnum.Subtraction">-</option>
+                    <option value="@SignEnum.Multiplication">*</option>
+                    <option value="@SignEnum.Division">/</option>
                 </InputSelect>
             </div>
             <div class="form-group">
                 <label for="second">Number № 2:</label>
-                <InputNumber id="second"
-                             @bind-Value="@CalcExpression.SecondValue" class="form-control"/>
+                <InputNumber id="second" @bind-Value="@CalcExpression.SecondNum" class="form-control"/>
             </div>
         </EditForm>
     </div>

@@ -1,22 +1,25 @@
 using System.ComponentModel.DataAnnotations;
+using DataCore.Enums;
 
 namespace DataCore.Models;
 
 public class CalcModel
 {
     [Required]
-    public float FirstValue { get; set; }
+    public float FirstNum { get; set; }
+    
     [Required]
-    public float SecondValue { get; set; }
+    public float SecondNum { get; set; }
+    
     [Required]
-    public string Sign { get; set; } = "+";
+    public SignEnum Sign { get; set; } = SignEnum.Addition;
     public string Calculate() =>
     Sign switch
     {
-        "/" => (FirstValue / SecondValue).ToString(),
-        "*" => (FirstValue * SecondValue).ToString(),
-        "+" => (FirstValue + SecondValue).ToString(),
-        "-" => (FirstValue - SecondValue).ToString(),
+        SignEnum.Addition => $"{FirstNum + SecondNum}",
+        SignEnum.Subtraction => $"{FirstNum - SecondNum}",
+        SignEnum.Multiplication => $"{FirstNum * SecondNum}",
+        SignEnum.Division => $"{FirstNum / SecondNum}",
         _ => "0"
     };
 }
