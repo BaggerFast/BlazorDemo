@@ -1,0 +1,24 @@
+﻿@using DataCore.Models
+@inherits ComponentBase
+
+<RadzenDataGrid
+  Data="@CalcData"
+  TItem="@CalcModel"
+  Style="height: 100%"
+  PageSize="4"
+  AllowPaging="true"
+  AllowSorting="true"
+  ShowPagingSummary="true"
+  PagerAlwaysVisible="true"
+  PagerHorizontalAlign="HorizontalAlign.Left">
+  <Columns>
+    <RadzenDataGridColumn TItem="@CalcModel" Title="Num № 1"
+                          Property="FirstNum" TextAlign="TextAlign.Center"/>
+    <RadzenDataGridColumn TItem="@CalcModel" Title="Sign"
+                          Property="SignToString" TextAlign="TextAlign.Center"/>
+    <RadzenDataGridColumn TItem="@CalcModel" Title="Num № 2"
+                          Property="SecondNum" TextAlign="TextAlign.Center"/>
+    <RadzenDataGridColumn TItem="@CalcModel" Title="Result"
+                          Property="Answer" TextAlign="TextAlign.Center"/>
+  </Columns>
+</RadzenDataGrid>
