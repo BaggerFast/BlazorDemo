@@ -1,5 +1,15 @@
-﻿@page "/section/calc"
+﻿@page "/calc"
+@using BlazorDemo.Shared.Custom
 @inherits LayoutComponentBase
 
 <PageTitle>Calc</PageTitle>
-<h1>@CalcService?.GetData()[0].SecondNum</h1>
+<h1>Calculator</h1>
+
+<div style="display: flex; flex-direction: row;">
+  <div class="card mt-5" style="width: 40%;">
+    <Calculator HandleCalcSubmitChanged="@HandleCalcSubmitChanged"/>
+  </div>
+  <div class="card mt-5" style="width: 60%; margin-left: 1%">
+    <CalculatorHistory @ref="@CalcHistoryComponent"/>
+  </div>
+</div>

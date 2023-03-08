@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace DataCore.Enums;
+﻿namespace DataCore.Enums;
 
 public enum SignEnum
 {

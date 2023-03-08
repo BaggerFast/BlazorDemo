@@ -1,11 +1,14 @@
-﻿using BlazorDemo.Services;
-using DataCore.Models;
+﻿using BlazorDemo.Shared.Custom;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorDemo.Pages;
 
-public partial class CalcSection: LayoutComponentBase
+public partial class CalcSection : LayoutComponentBase
 {
-    [Inject] private CalcDataService? CalcService { get; set; }
+    private CalculatorHistory CalcHistoryComponent;
 
+    private void HandleCalcSubmitChanged()
+    {
+        CalcHistoryComponent.Update();
+    }
 }

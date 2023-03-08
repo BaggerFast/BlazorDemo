@@ -7,6 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorDemo", "BlazorDemo/Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCore", "DataCore\DataCore.csproj", "{51195CF7-798F-4D4C-9C5E-7551AD6520C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{27A17907-1C4A-4294-A5CF-4BC7CAA8ABF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AA51AE5A-04C5-4B6A-A87E-D94FE10BEB11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{9FE2003D-E184-40D2-8236-398054225705}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.editorconfig = .editorconfig
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E16D5A15-E93C-4ED3-8188-DC2BB28606D1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E52E0BA5-386C-4A8E-A30B-24D814C2B1B7} = {27A17907-1C4A-4294-A5CF-4BC7CAA8ABF7}
+		{51195CF7-798F-4D4C-9C5E-7551AD6520C2} = {AA51AE5A-04C5-4B6A-A87E-D94FE10BEB11}
 	EndGlobalSection
 EndGlobal
